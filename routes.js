@@ -63,29 +63,6 @@ router.get('/api/fetch-contactdata', async (req, res) => {
     }
 })
 
-// GET route for portfolio page
-router.get('/portfolio', async (req, res) => {
-    // Calling the tracking function and passing portfolio as pageName
-    await recordPageVisit('portfolio', req)
-    try {
-        // Fetch all docs for the portfolio collection in db
-        const portfolioItems = await Portfolio.find({})
-
-        // Checks if there is no item found
-        if (portfolioItems.length === 0) {
-            // If no items found we log it to the console
-            console.log('No portfolio items found.')
-        }
-        // Render portfolio.ejs passing the fetched portfolio items to the ejs template
-        res.render('portfolio', { portfolioItems: portfolioItems })
-    } catch (error) {
-        // If a error occurs and we could fetch the portfolio items we log it to console
-        console.error('Failer to fetch portfolio items', error)
-        res.status(500).send('Server Error')
-    }
-})
-
-
 // GET route for admin page
 router.get('/admin', (req, res) => {
     // Render adminLogin.ejs

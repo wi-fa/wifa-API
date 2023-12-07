@@ -6,7 +6,7 @@ const app = express()
 const cors = require('cors')
 const routes = require('./routes')
 const pageVisitRoutes = require('./routes')
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3030
 require('dotenv').config()
 
 // Connect to db using Mongoose
@@ -25,10 +25,6 @@ mongoose
 app.use(cors({
     origin: 'http://localhost:5173'
 }))
-
-// Set up view engine and views directory
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'ejs')
 
 // Serve static files from the 'public' directory
 app.use(express.static('public'))
