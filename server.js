@@ -5,7 +5,7 @@ const path = require('path')
 const app = express()
 const cors = require('cors')
 const routes = require('./routes')
-const pageVisitRoutes = require('./routes')
+// const pageVisitRoutes = require('./routes')
 const PORT = process.env.PORT || 3030
 require('dotenv').config()
 
@@ -38,7 +38,7 @@ app.use(express.json())
 app.use('/', routes)
 
 // Additional routes for page visit statistics
-app.use('/api', pageVisitRoutes)
+// app.use('/api', pageVisitRoutes)
 
 // Error handling middleware
 app.use((err, req, res, next) => {
