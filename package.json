@@ -8,7 +8,7 @@
         "build": "echo 'No build for this app'"
     },
     "engines": {
-        "node": "20.4.0"
+        "node": "18.18.2"
     },
     "keywords": [],
     "author": "William Falk",

@@ -570,23 +570,23 @@ router.get('/api/fetch-pagedata', async (req, res) => {
 //     }
 // })
 
-// // GET route for dummy error page
-// router.get('/example-error', (req, res, next) => {
-//     try {
-//         // This will intentionally throw an error
-//         throw new Error('This is an example error')
-//     } catch (error) {
-//         console.error('Caught an error:', error)
-//         // Throwing the error to the error middleware
-//         next(error)
-//     }
-// })
+// GET route for dummy error page
+router.get('/example-error', (req, res, next) => {
+    try {
+        // This will intentionally throw an error
+        throw new Error('This is an example error')
+    } catch (error) {
+        console.error('Caught an error:', error)
+        // Throwing the error to the error middleware
+        next(error)
+    }
+})
 
-// // GET route for dummy 404 page
-// router.get('*', (req, res) => {
-//     // Handle all other routes, including custom error rendering
-//     res.render('404', { is404: true })
-// })
+// GET route for dummy 404 page
+router.get('*', (req, res) => {
+    // Handle all other routes, including custom error rendering
+    res.render('404', { is404: true })
+})
 
 // Exporting the router
 module.exports = router
